@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { increaseAmount } from '../features/basketSlices';
+import { increaseAmount, decreaseAmount } from '../features/basketSlices';
 
 const Product = ({name, amount, image, price, total}) => {
     const dispatch = useDispatch();
@@ -16,7 +16,8 @@ const Product = ({name, amount, image, price, total}) => {
             <div className='flex flex-col items-center'>
                 <p className='text-lg font-medium'>Amount</p>
                 <div className='flex flex-row items-center gap-4 text-gray-600 font-medium'>
-                    <button className='text-xl'>-</button>
+                    <button className='text-xl'
+                    onClick={() => {dispatch(decreaseAmount({name}))}}>-</button>
                     <p>{amount}</p>
                     <button className='text-xl'
                     onClick={()=>{dispatch(increaseAmount({name}) )}}>+</button>
