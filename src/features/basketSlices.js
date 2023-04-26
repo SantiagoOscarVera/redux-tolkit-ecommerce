@@ -18,10 +18,13 @@ const basketSlice = createSlice ({
         decreaseAmount: (state, {payload}) => {
             const item = state.products.find(item => item.name === payload.name)
             item.amount--
+        },
+        removeItem: (state,{payload}) => {
+            state.products = state.products.filter(item => item.name !== payload.name)
         }
     } 
 })
 
-export const {increaseAmount, decreaseAmount} = basketSlice.actions
+export const {increaseAmount, decreaseAmount, removeItem} = basketSlice.actions
 
 export default basketSlice.reducer; 
