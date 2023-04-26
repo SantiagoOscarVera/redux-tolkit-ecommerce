@@ -15,7 +15,7 @@ function App() {
   return (
     <>
     <Navbar/>
-     <h1 className="text-center text-3xl font-medium mt-2 py-4"> Hello pollo</h1>
+     <h1 className="text-center text-3xl font-medium mt-2 py-4"> Bienvenidos clientes 🙌</h1>
      <BasketProduct/>
     </>
   )
